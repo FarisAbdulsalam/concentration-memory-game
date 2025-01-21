@@ -4,28 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Digimon Card Memory Game</title>
+    <title>Memory Card Game</title>
 </head>
 <body>
-    <h1>Digimon Card Memory Game</h1>
-    <div id="cardLayout">
-        <div class="card" img src="https://static.wikia.nocookie.net/digimoncardgame/images/6/69/EX6-003.png/revision/latest?cb=20240621073104">a</div>
-        <div class="card" img src="https://static.wikia.nocookie.net/digimoncardgame/images/6/69/EX6-003.png/revision/latest?cb=20240621073104"></div>
-        <div class="card" img src="https://static.wikia.nocookie.net/digimoncardgame/images/d/dc/EX6-054.png/revision/latest?cb=20240531091328"></div>
-        <div class="card" img src="https://static.wikia.nocookie.net/digimoncardgame/images/d/dc/EX6-054.png/revision/latest?cb=20240531091328"></div>
-        <div class="card" img src="https://static.wikia.nocookie.net/digimoncardgame/images/4/4d/EX6-030.png/revision/latest?cb=20240531091329"></div>
-        <div class="card" img src="https://static.wikia.nocookie.net/digimoncardgame/images/4/4d/EX6-030.png/revision/latest?cb=20240531091329"></div>
-        <div class="card" img src="https://static.wikia.nocookie.net/digimoncardgame/images/4/4d/EX6-029.png/revision/latest?cb=20240531091329"></div>
-        <div class="card" img src="https://static.wikia.nocookie.net/digimoncardgame/images/4/4d/EX6-029.png/revision/latest?cb=20240531091329"></div>
-        <div class="card" img src="https://static.wikia.nocookie.net/digimoncardgame/images/4/4d/EX6-004.png/revision/latest?cb=20240531091329"></div>
-        <div class="card" img src="https://static.wikia.nocookie.net/digimoncardgame/images/4/4d/EX6-004.png/revision/latest?cb=20240531091329"></div>
-        <div class="card" img src="https://static.wikia.nocookie.net/digimoncardgame/images/4/4d/EX6-055.png/revision/latest?cb=20240531091329"></div>
-        <div class="card" img src="https://static.wikia.nocookie.net/digimoncardgame/images/4/4d/EX6-055.png/revision/latest?cb=20240531091329"></div>
+    <div class="game">
+        <div class="gameControls">
+            <button id="startGame">Start Game</button>
+            <div class="statistics">
+                <div class="moves">0 Moves</div>
+                <div class="countdown-display"></div>
+                <div class="score">Score: 0</div>
+            </div>
+        </div>
+        <div class="gameBoard">
+            <div class="board">
+                <div class="card cardBack" id="heart-card1">🩷</div>
+                <div class="card cardBack" id="heart-card2">🩷</div>
+                <div class="card cardBack" id="blush1">😊</div>
+                <div class="card cardBack" id="blush2">😊</div>
+                <div class="card cardBack" id="twohearts1">💕</div>
+                <div class="card cardBack" id="twohearts2">💕</div>
+                <div class="card cardBack" id="cow1">🐄</div>
+                <div class="card cardBack" id="cow2">🐄</div>
+                <div class="card cardBack" id="sheep1">🐏</div>
+                <div class="card cardBack" id="sheep2">🐏</div>
+                <div class="card cardBack" id="sleep1">😴</div>
+                <div class="card cardBack" id="sleep2">😴</div>
+            </div>
+            <div class="gameWin"></div>
+        </div>
     </div>
-    <p>How to Play:</p>
-    <li>Click on a card to reveal it</li>
-    <li>Match all cards to win!</li>
-    <li>You have 2 minutes to finish</li>
+
+    <!-- <button id="like-button">Like</button> -->
     <script src="app.js"></script>
 </body>
 </html>
