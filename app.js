@@ -29,6 +29,7 @@ const countDownElement = document.getElementById('countdown-display');
 //const likeButtonElement = document.querySelector('#like-button');
 const cardClick = document.getElementById(".card");
 const startGameElement = document.querySelector('#startGame')
+
 /*-------------- Functions -------------*/
 const initialize = () => {
     if(gameState === false){
@@ -67,8 +68,8 @@ const compareCards = (emoji) => {
         match = true;
         score++;
         attempts--;
-        // cardOne = '';
-        // cardTwo = '';
+        cardOne = '';
+        cardTwo = '';
         console.log("yippiee it's a match")
         // emoji.classList.toggle('cardFront')
      } else{
@@ -78,12 +79,12 @@ const compareCards = (emoji) => {
         // cardTwo = '';
         console.log("not a match :(")
         setTimeout(() =>{
-        cardTwo.classList.toggle('cardFront');
-        cardOne.classList.remove('cardFront');
+            cardTwo.classList.remove('cardFront');
+            cardOne.classList.remove('cardFront');
+            cardOne = '';
+            cardTwo = '';
         }, 2000);
     }
-    cardOne = '';
-    cardTwo = '';
     // emoji.classList.remove('cardFront')
 }
 
