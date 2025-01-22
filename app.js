@@ -8,7 +8,6 @@ let points = 0;
 let attempts = 8;
 let cardOne = '';
 let cardTwo = '';
-let match = null;
 let winningScore = 4;
 let maxAttempts = 6;
 /*----- Cached Element References  -----*/
@@ -28,7 +27,6 @@ const initialize = () => {
         attempts = 6;
         cardOne = '';
         cardTwo = '';
-        match = null;
         moves.classList.remove('hidden');
         score.classList.remove('hidden');
         moves.classList.add('show');
@@ -73,7 +71,9 @@ const generateBoard = () => {
 }
 
 const play = (event) => {
-    console.log(cardOne);
+    if(cardTwo !== ''){
+        return;
+    }
     if(cardOne === ''){
         cardOne = event.target;
         event.target.classList.add('cardFront')
@@ -89,7 +89,6 @@ const compareCards = (emoji) => {
     emoji.classList.add('cardFront')
     cardTwo = emoji;
     if(cardOne.textContent === cardTwo.textContent){
-        match = true;
         points++;
         if(points >= winningScore){
             winMessage.classList.remove('hidden');
@@ -100,7 +99,6 @@ const compareCards = (emoji) => {
         cardTwo = '';
         console.log("yippiee it's a match")
      } else{
-        match = false;
         attempts--;
         if(attempts === 0){
             failMessage.classList.remove('hidden');
@@ -113,7 +111,7 @@ const compareCards = (emoji) => {
             cardOne.classList.remove('cardFront');
             cardOne = '';
             cardTwo = '';
-        }, 2000);
+        }, 1000);
     }
 }
 
