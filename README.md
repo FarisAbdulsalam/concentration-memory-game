@@ -1,7 +1,7 @@
 <picture>
- <source media="(prefers-color-scheme: dark)" srcset="https://imgur.com/cc064192-4b9d-46e7-9f4c-83d2c5189ae8">
- <source media="(prefers-color-scheme: light)" srcset="https://imgur.com/cc064192-4b9d-46e7-9f4c-83d2c5189ae8">
- <img alt="Screenshot showcasing the game" src="https://imgur.com/cc064192-4b9d-46e7-9f4c-83d2c5189ae8">
+ <source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/fZvNHZx.png">
+ <source media="(prefers-color-scheme: light)" srcset="https://i.imgur.com/fZvNHZx.png">
+ <img alt="Screenshot showcasing the game" src="https://i.imgur.com/fZvNHZx.png">
 </picture>
 
 # What is Concentration?
