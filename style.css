@@ -52,9 +52,20 @@
 .cardFront{
     color: rgba(0,0,0, 1.0);
 }
-/* .nabila {
-    background-color: blue;
-} */
+
+.button {
+    cursor: pointer;
+}
+
+.hidden {
+    display:none;
+}
+
+.show {
+    display:block;
+}
+
+/*--------------- Code Graveyard ---------------*/
 
 /* #winMessage, #failMessage {
     display: none;
@@ -77,15 +88,3 @@
     font-size: 28pt; 
     background:white;
 } */
-
-.button {
-    cursor: pointer;
-}
-
-.hidden {
-    display:none;
-}
-
-.show {
-    display:block;
-}

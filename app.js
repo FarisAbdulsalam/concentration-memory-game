@@ -3,7 +3,6 @@ const emojiArr = ["❤️", "😍", "🐏", "🐄"]
 
 /*---------- Variables (state) ---------*/
 
-let indices = [0,1,2,3,4,5];
 let gameState = false;
 let points = 0;
 let attempts = 8;
@@ -18,8 +17,6 @@ const moves = document.getElementById('moves');
 const score = document.getElementById('score');
 const start = document.querySelector('button');
 const countDownElement = document.getElementById('countdown-display');
-//const likeButtonElement = document.querySelector('#like-button');
-// const cardClick = document.getElementById(".card");
 const startGameElement = document.querySelector('#startGame');
 const winMessage = document.getElementById('winMessage');
 const failMessage = document.getElementById('failMessage');
@@ -27,9 +24,6 @@ const failMessage = document.getElementById('failMessage');
 const initialize = () => {
     if(gameState === false){
         gameState = true;
-        indices = [...indices, ...indices];
-        indices.sort(() => Math.random() - 0.5);
-        console.log(indices);
         points = 0;
         attempts = 6;
         cardOne = '';
@@ -86,7 +80,6 @@ const play = (event) => {
     }   else{
         compareCards(event.target)
     }
-    //event.target.classList.remove('cardFront')
     console.log(moves.target);
     moves.innerHTML = `${attempts}/${maxAttempts} moves remaining`;
     score.innerHTML = `Score: ${points}/${winningScore}`;
@@ -101,20 +94,19 @@ const compareCards = (emoji) => {
         if(points >= winningScore){
             winMessage.classList.remove('hidden');
             winMessage.classList.add('show');
+            gameState = false;
         }
         cardOne = '';
         cardTwo = '';
         console.log("yippiee it's a match")
-        // emoji.classList.toggle('cardFront')
      } else{
         match = false;
         attempts--;
         if(attempts === 0){
             failMessage.classList.remove('hidden');
             failMessage.classList.add('show');
+            gameState = false;
         }
-        // cardOne = '';
-        // cardTwo = '';
         console.log("not a match :(")
         setTimeout(() =>{
             cardTwo.classList.remove('cardFront');
@@ -123,12 +115,25 @@ const compareCards = (emoji) => {
             cardTwo = '';
         }, 2000);
     }
-    // emoji.classList.remove('cardFront')
 }
 
 /*----------- Event Listeners ----------*/
+
+startGameElement.addEventListener('click', startGame);
+
+/*----------- Code Graveyard ------------*/
+//event.target.classList.remove('cardFront')
 //likeButtonElement.addEventListener('click', printSomething);
 // cards.forEach(card => {
 //     card.addEventListener('click', play);
 // })
-startGameElement.addEventListener('click', startGame);
+// emoji.classList.remove('cardFront')
+// cardOne = '';
+// cardTwo = '';
+// emoji.classList.toggle('cardFront')
+//const likeButtonElement = document.querySelector('#like-button');
+// const cardClick = document.getElementById(".card");
+//let indices = [0,1,2,3,4,5];
+// indices = [...indices, ...indices];
+// indices.sort(() => Math.random() - 0.5);
+// console.log(indices);
