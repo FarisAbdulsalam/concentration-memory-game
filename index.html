@@ -11,14 +11,16 @@
         <div class="gameControls">
             <button id="startGame">Start Game</button>
             <div class="statistics">
-                <div id="moves">8/8 Moves remaining</div>
-                <div id="score">Score: 0/6</div>
+                <div id="moves" class="hidden">8/8 Moves remaining</div>
+                <div id="score" class="hidden">Score: 0/6</div>
             </div>
         </div>
+        <div id="winMessage" class="hidden"><h3>You are victorious! 🎊</h3></div>
+        <div id="failMessage" class="hidden"><h3>You have failed... 😔</h3></div>
         <div class="gameBoard">
-            <div class="board">
-                <div class="card cardBack" id="heart-card1">🩷</div>
-                <div class="card cardBack" id="heart-card2">🩷</div>
+            <div id="board">
+                <!-- <div class="card cardBack" id="heart-card1">🩷</div> -->
+                <!-- <div class="card cardBack" id="heart-card2">🩷</div>
                 <div class="card cardBack" id="blush1">😊</div>
                 <div class="card cardBack" id="blush2">😊</div>
                 <div class="card cardBack" id="twohearts1">💕</div>
@@ -28,9 +30,8 @@
                 <div class="card cardBack" id="sheep1">🐏</div>
                 <div class="card cardBack" id="sheep2">🐏</div>
                 <div class="card cardBack" id="sleep1">😴</div>
-                <div class="card cardBack" id="sleep2">😴</div>
+                <div class="card cardBack" id="sleep2">😴</div> -->
             </div>
-            <div class="gameWin"></div>
         </div>
     </div>
 

@@ -11,28 +11,38 @@
     transform: translate(-50%, -50%);
 }
 
-.board{
+#board{
     margin: 0 auto;
     margin-top: 50px;
     border: 2px solid black;
     border-radius: 4px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     padding: 5px 0;
     width: 600px;
     height: 620px;
 }
 
 .card {
-    width: 298px;
-    height: 100px;
+    border: 2px solid white;
+    width: 50%;
+    height: 150px;
     cursor: pointer;
-    position: relative;
-    background-color: pink;
+    background-color: black;
     display: flex;
     flex-wrap: wrap;
     padding: 5px 0;
     border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+    font-size: 28pt;
 }
 
 .cardBack {
@@ -44,6 +54,10 @@
 }
 /* .nabila {
     background-color: blue;
+} */
+
+/* #winMessage, #failMessage {
+    display: none;
 } */
 
 
@@ -68,3 +82,10 @@
     cursor: pointer;
 }
 
+.hidden {
+    display:none;
+}
+
+.show {
+    display:block;
+}
