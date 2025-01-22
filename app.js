@@ -20,6 +20,8 @@ const startGameElement = document.querySelector('#startGame');
 const winMessage = document.getElementById('winMessage');
 const failMessage = document.getElementById('failMessage');
 /*-------------- Functions -------------*/
+
+// initialize variables, generate game board, show score/move counters
 const initialize = () => {
     if(gameState === false){
         gameState = true;
@@ -40,11 +42,12 @@ const initialize = () => {
         })
     }
 }
-
+// function to start the game by calling initialize
 const startGame = () => {
     initialize();
 }
 
+// randomizes the cards and generates a div for each card
 const generateBoard = () => {
     let cardArr = [];
     for (let i = 0; i < emojiArr.length; i++) {
@@ -69,7 +72,7 @@ const generateBoard = () => {
       }
     )
 }
-
+// takes value of card clicked and passes it to compareCards function
 const play = (event) => {
     if(cardTwo !== ''){
         return;
@@ -77,7 +80,10 @@ const play = (event) => {
     if(cardOne === ''){
         cardOne = event.target;
         event.target.classList.add('cardFront')
-    }   else{
+    } else if (cardOne === event.target) {
+        return;
+    }   
+      else {
         compareCards(event.target)
     }
     console.log(moves.target);
@@ -85,6 +91,7 @@ const play = (event) => {
     score.innerHTML = `Score: ${points}/${winningScore}`;
 }
 
+// compares cards and adjusts moves/score accordingly
 const compareCards = (emoji) => {
     emoji.classList.add('cardFront')
     cardTwo = emoji;
@@ -117,7 +124,7 @@ const compareCards = (emoji) => {
 
 /*----------- Event Listeners ----------*/
 
-startGameElement.addEventListener('click', startGame);
+startGameElement.addEventListener('click', startGame); // event listener for clicking the cards
 
 /*----------- Code Graveyard ------------*/
 //event.target.classList.remove('cardFront')
